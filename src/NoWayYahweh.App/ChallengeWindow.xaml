@@ -1,0 +1,104 @@
+<Window x:Class="NoWayYahweh.App.ChallengeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Uma pausa — No way? Yahweh!" Width="640" Height="600" MinWidth="480" MinHeight="520"
+        Background="{StaticResource Bg}" FontFamily="Segoe UI Variable Text, Segoe UI"
+        Icon="app.ico" WindowStartupLocation="CenterOwner" ResizeMode="CanResize">
+  <Window.Resources>
+    <Style x:Key="Primary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+      <Setter Property="Background" Value="{StaticResource Accent}" />
+      <Setter Property="Foreground" Value="#0B0C0E" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Padding" Value="18,10" />
+    </Style>
+    <Style x:Key="Body" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="{StaticResource Text}" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="FontSize" Value="15" />
+      <Setter Property="LineHeight" Value="22" />
+    </Style>
+  </Window.Resources>
+
+  <Grid Margin="32,28">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <StackPanel>
+      <TextBlock Text="NO WAY? YAHWEH!" Foreground="{StaticResource Accent}" FontSize="12" FontWeight="SemiBold" />
+      <TextBlock x:Name="StepTitle" Foreground="{StaticResource Text}" FontSize="24" FontWeight="SemiBold" Margin="0,6,0,18" TextWrapping="Wrap" />
+    </StackPanel>
+
+    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+      <Grid>
+        <!-- 1. Reflection -->
+        <StackPanel x:Name="ReflectionStep">
+          <Border Style="{StaticResource Card}" BorderThickness="3,1,1,1" BorderBrush="{StaticResource Accent}">
+            <StackPanel>
+              <TextBlock x:Name="VerseText" Style="{StaticResource Body}" FontSize="17" />
+              <TextBlock x:Name="VerseRef" Foreground="{StaticResource Muted}" Margin="0,10,0,0" />
+            </StackPanel>
+          </Border>
+          <TextBlock x:Name="ReflectionText" Style="{StaticResource Body}" Margin="0,4,0,12" />
+          <TextBlock Style="{StaticResource Body}" Foreground="{StaticResource Muted}"
+                     Text="Respire. Se este é um momento difícil, tudo bem — uma vontade não define quem você é, e uma recaída também não. Continuar protegido é sempre uma escolha disponível." />
+        </StackPanel>
+
+        <!-- 2. Duration -->
+        <StackPanel x:Name="DurationStep" Visibility="Collapsed">
+          <TextBlock Style="{StaticResource Body}" Margin="0,0,0,14"
+                     Text="A pausa desliga só a regra de palavras no endereço e os seus domínios extras. Os sites pornográficos conhecidos continuam bloqueados. Ela termina sozinha." />
+          <ItemsControl x:Name="DurationOptions">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Content="{Binding Label}" Tag="{Binding}" Click="Duration_Click" HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left" Margin="0,0,0,8" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+
+        <!-- 3. Challenges -->
+        <StackPanel x:Name="ChallengeStep" Visibility="Collapsed">
+          <TextBlock x:Name="ChallengeProgress" Foreground="{StaticResource Muted}" Margin="0,0,0,4" />
+          <TextBlock x:Name="ChallengeTitle" Foreground="{StaticResource Text}" FontSize="17" FontWeight="SemiBold" Margin="0,0,0,8" />
+          <TextBlock x:Name="ChallengePrompt" Style="{StaticResource Body}" Margin="0,0,0,12" />
+          <TextBlock x:Name="MemoryCountdown" Foreground="{StaticResource Muted}" Margin="0,0,0,6" Visibility="Collapsed" />
+          <WrapPanel x:Name="Items" Margin="0,0,0,12" />
+          <Button x:Name="RestartOrdering" Content="Recomeçar a ordem" Click="RestartOrdering_Click" HorizontalAlignment="Left"
+                  Margin="0,0,0,12" Visibility="Collapsed" />
+          <DockPanel>
+            <Button x:Name="Confirm" Content="Confirmar" Click="Confirm_Click" DockPanel.Dock="Right" Margin="8,0,0,0" IsDefault="True" />
+            <TextBox x:Name="Answer" FontSize="16" Padding="8,6" Background="{StaticResource Surface}" Foreground="{StaticResource Text}"
+                     BorderBrush="{StaticResource Border}" CaretBrush="{StaticResource Text}" />
+          </DockPanel>
+          <TextBlock x:Name="Feedback" Foreground="{StaticResource Warn}" Margin="0,10,0,0" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!-- 4. Responsible-person password (only when one is set) -->
+        <StackPanel x:Name="PasswordStep" Visibility="Collapsed">
+          <TextBlock Style="{StaticResource Body}" Margin="0,0,0,12"
+                     Text="Há uma senha de responsável. Peça a quem a guarda — conversar sobre este momento também faz parte da caminhada." />
+          <DockPanel>
+            <Button Content="Confirmar" Click="Password_Click" DockPanel.Dock="Right" Margin="8,0,0,0" IsDefault="True" />
+            <PasswordBox x:Name="Password" FontSize="16" Padding="8,6" Background="{StaticResource Surface}" Foreground="{StaticResource Text}"
+                         BorderBrush="{StaticResource Border}" CaretBrush="{StaticResource Text}" />
+          </DockPanel>
+          <TextBlock x:Name="PasswordFeedback" Foreground="{StaticResource Warn}" Margin="0,10,0,0" />
+        </StackPanel>
+
+        <!-- 5. Done -->
+        <StackPanel x:Name="DoneStep" Visibility="Collapsed">
+          <TextBlock x:Name="DoneText" Style="{StaticResource Body}" />
+        </StackPanel>
+      </Grid>
+    </ScrollViewer>
+
+    <DockPanel Grid.Row="2" Margin="0,18,0,0" LastChildFill="False">
+      <Button x:Name="StayProtected" Content="Continuar protegido" Style="{StaticResource Primary}" Click="StayProtected_Click" DockPanel.Dock="Left" />
+      <Button x:Name="Proceed" Click="Proceed_Click" DockPanel.Dock="Right" />
+    </DockPanel>
+  </Grid>
+</Window>

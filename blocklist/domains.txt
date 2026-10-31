@@ -1,0 +1,106 @@
+# No way? Yahweh! — lista base de domínios adultos.
+# Um domínio por linha; subdomínios são bloqueados automaticamente
+# (bloquear "pornhub.com" também bloqueia "www.pornhub.com" e "pt.pornhub.com").
+# Linhas que começam com # são comentários. Gere as regras com: node tools/build-rules.mjs
+
+# Pornhub e rede
+pornhub.com
+pornhub.org
+pornhub.net
+pornhubpremium.com
+phncdn.com
+youporn.com
+redtube.com
+tube8.com
+thumbzilla.com
+pornmd.com
+
+# XVideos / XNXX
+xvideos.com
+xvideos.es
+xvideos2.com
+xvideos-cdn.com
+xvideos.red
+xnxx.com
+xnxx.tv
+xnxx-cdn.com
+
+# XHamster
+xhamster.com
+xhamster.desi
+xhamster2.com
+xhamster3.com
+xhamsterlive.com
+xhcdn.com
+
+# Hentai / mangá adulto
+nhentai.net
+nhentai.to
+hentaihaven.xxx
+hanime.tv
+e-hentai.org
+exhentai.org
+hentai2read.com
+rule34.xxx
+rule34.paheal.net
+gelbooru.com
+
+# Tubos e agregadores conhecidos
+spankbang.com
+eporner.com
+beeg.com
+porntrex.com
+txxx.com
+hclips.com
+hdzog.com
+upornia.com
+tnaflix.com
+empflix.com
+drtuber.com
+sunporno.com
+porn.com
+pornone.com
+4tube.com
+fuq.com
+motherless.com
+heavy-r.com
+porntube.com
+pornhd.com
+youjizz.com
+ixxx.com
+sxyprn.com
+xmoviesforyou.com
+porndig.com
+fapster.xxx
+manyvids.com
+clips4sale.com
+iwara.tv
+
+# Câmeras ao vivo
+chaturbate.com
+stripchat.com
+bongacams.com
+livejasmin.com
+cam4.com
+camsoda.com
+myfreecams.com
+flirt4free.com
+
+# Estúdios / assinaturas
+brazzers.com
+realitykings.com
+bangbros.com
+naughtyamerica.com
+digitalplayground.com
+mofos.com
+teamskeet.com
+vixen.com
+blacked.com
+tushy.com
+evilangel.com
+kink.com
+
+# Conteúdo por assinatura com foco adulto
+onlyfans.com
+fansly.com
+justfor.fans

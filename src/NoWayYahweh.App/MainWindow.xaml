@@ -1,0 +1,95 @@
+<Window x:Class="NoWayYahweh.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="No way? Yahweh!" Width="720" Height="560" MinWidth="520" MinHeight="480"
+        Background="{StaticResource Bg}" FontFamily="Segoe UI Variable Text, Segoe UI"
+        Icon="app.ico" WindowStartupLocation="CenterScreen">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="32,28">
+      <TextBlock Text="NO WAY? YAHWEH!" Foreground="{StaticResource Accent}" FontSize="12" FontWeight="SemiBold" />
+      <TextBlock Text="A pause before the temptation." Foreground="{StaticResource Muted}" Margin="0,4,0,24" />
+
+      <Border Style="{StaticResource Card}">
+        <StackPanel>
+          <TextBlock Text="Status da proteção" Style="{StaticResource Label}" />
+          <StackPanel Orientation="Horizontal">
+            <Ellipse x:Name="StatusDot" Width="10" Height="10" Margin="0,4,10,0" VerticalAlignment="Center" />
+            <TextBlock x:Name="StatusText" Style="{StaticResource Value}" />
+          </StackPanel>
+          <TextBlock x:Name="StatusDetail" Foreground="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,8,0,0" />
+        </StackPanel>
+      </Border>
+
+      <UniformGrid Columns="2">
+        <Border Style="{StaticResource Card}" Margin="0,0,6,12">
+          <StackPanel>
+            <TextBlock Text="Sites bloqueados" Style="{StaticResource Label}" />
+            <TextBlock x:Name="BlockCount" Style="{StaticResource Value}" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="6,0,0,12">
+          <StackPanel>
+            <TextBlock Text="Protegido há" Style="{StaticResource Label}" />
+            <TextBlock x:Name="ProtectedFor" Style="{StaticResource Value}" />
+          </StackPanel>
+        </Border>
+      </UniformGrid>
+
+      <Border Style="{StaticResource Card}">
+        <StackPanel>
+          <TextBlock Text="Navegadores protegidos" Style="{StaticResource Label}" />
+          <ItemsControl x:Name="Browsers">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding}" Foreground="{StaticResource Text}" Margin="0,4,0,0" TextWrapping="Wrap" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+
+      <WrapPanel Margin="0,8,0,0">
+        <Button x:Name="PauseButton" Content="Pausar proteção…" Click="Pause_Click" Margin="0,0,8,8" />
+        <Button x:Name="ResumeButton" Content="Reativar agora" Click="Resume_Click" Margin="0,0,8,8" Visibility="Collapsed" />
+        <Button Content="Reparar integração com navegadores" Click="Repair_Click" Margin="0,0,8,8" />
+        <Button Content="Editar domínios extras" Click="ExtraDomains_Click" Margin="0,0,8,8" />
+      </WrapPanel>
+      <TextBlock x:Name="Message" Foreground="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,4,0,16" />
+
+      <Border Style="{StaticResource Card}">
+        <StackPanel>
+          <TextBlock Text="Configurações e segurança" Style="{StaticResource Label}" />
+
+          <CheckBox x:Name="StartupCheck" Foreground="{StaticResource Text}" Margin="0,6,0,4"
+                    Checked="StartupCheck_Changed" Unchecked="StartupCheck_Changed"
+                    Content="Verificar a integração ao iniciar o Windows (sem janela)" />
+
+          <TextBlock x:Name="PrivateStatus" Foreground="{StaticResource Text}" TextWrapping="Wrap" Margin="0,14,0,6" />
+          <WrapPanel>
+            <Button x:Name="BlockPrivateButton" Content="Bloquear janelas privadas…" Click="BlockPrivate_Click" Margin="0,0,8,8" />
+            <Button x:Name="UnblockPrivateButton" Content="Liberar janelas privadas…" Click="UnblockPrivate_Click" Margin="0,0,8,8" />
+          </WrapPanel>
+
+          <TextBlock x:Name="PasswordStatus" Foreground="{StaticResource Text}" TextWrapping="Wrap" Margin="0,10,0,6" />
+          <WrapPanel>
+            <Button x:Name="SetPasswordButton" Content="Definir senha de responsável…" Click="SetPassword_Click" Margin="0,0,8,8" />
+            <Button x:Name="ChangePasswordButton" Content="Alterar senha…" Click="ChangePassword_Click" Margin="0,0,8,8" />
+            <Button x:Name="RemovePasswordButton" Content="Remover senha…" Click="RemovePassword_Click" Margin="0,0,8,8" />
+          </WrapPanel>
+
+          <WrapPanel Margin="0,10,0,0">
+            <Button Content="Verificar integridade" Click="Integrity_Click" Margin="0,0,8,8" />
+            <Button Content="Desinstalar…" Click="Uninstall_Click" Margin="0,0,8,8" />
+          </WrapPanel>
+          <ItemsControl x:Name="IntegrityResults">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding}" Foreground="{StaticResource Muted}" TextWrapping="Wrap" Margin="0,2,0,0" />
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
+</Window>

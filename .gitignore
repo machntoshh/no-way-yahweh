@@ -1,0 +1,31 @@
+# Build output
+bin/
+obj/
+artifacts/
+TestResults/
+*.user
+.vs/
+.vscode/
+*.log
+
+# Index the browser writes inside an unpacked extension folder
+extension/_metadata/
+
+# Private keys and certificates — never publish.
+# keys/ holds the private key behind the development extension ID; the public half is
+# already in extension/manifest.json ("key"), which is all anyone needs to build and run.
+keys/
+*.pem
+*.pfx
+*.p12
+*.key
+*.snk
+
+# Local environment / secrets (the project needs none; see docs/CONFIGURACAO.md)
+.env
+.env.*
+
+# OS clutter
+Thumbs.db
+desktop.ini
+.DS_Store

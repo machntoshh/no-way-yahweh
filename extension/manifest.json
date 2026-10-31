@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "No way? Yahweh!",
+  "short_name": "No way? Yahweh!",
+  "version": "1.0.0",
+  "description": "A pause before the temptation. Bloqueia sites pornográficos, 100% local.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxK8Zmkck9VGc1ZZxQAdFNu1Eb1uDHxlWMJvS/c0JbkmFOgMsHo+I4WxBb2+S8hwMWCXMjNQQId9cOCq0ufqMxcs9WzvxZtPIVp3YAp1dLLuCL9Oi3Boj8EhYf822HQvw7JLpCkMa1tHbVKAJjdarzWm0EOnFcmoSDJVJxudXY+Q0TldJSTtYSNqUVGEgx2aSCDYmUz+gdpUFT7Ju4Ph90CfuPvuRkLiGnR2sqnbCGbcnfiQo0eCMc4Vbtuatvnsp/4d8GLeXnKF6t7ORbCocKHCix7o+7nqcADAPgfZ4SgIOiBsLteQ6CJAxQzlOCC5skx7CvYufdUAroni/HkYc/wIDAQAB",
+  "minimum_chrome_version": "121",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "nativeMessaging",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "adult_domains",
+        "enabled": true,
+        "path": "rules/adult_domains.json"
+      },
+      {
+        "id": "keyword",
+        "enabled": true,
+        "path": "rules/keyword.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.css",
+        "blocked.js",
+        "verses.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "incognito": "split",
+  "action": {
+    "default_title": "No way? Yahweh!",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

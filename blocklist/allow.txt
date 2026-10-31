@@ -1,0 +1,5 @@
+# Domínios que NUNCA devem ser bloqueados pela regra de palavra-chave no endereço
+# (ex.: sites de ajuda para quem quer largar a pornografia).
+# Um domínio por linha; vale para subdomínios.
+yourbrainonporn.com
+fightthenewdrug.org

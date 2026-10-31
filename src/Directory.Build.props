@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- Product version: keep in sync with installer/NoWayYahweh.iss and extension/manifest.json. -->
+    <Version>1.0.0</Version>
+    <Product>No way? Yahweh!</Product>
+  </PropertyGroup>
+</Project>
