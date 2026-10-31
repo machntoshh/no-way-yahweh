@@ -127,4 +127,4 @@ Componentes de terceiros e suas licenças: [THIRD-PARTY-NOTICES.md](THIRD-PARTY-
 
 ---
 
-<p align="center"><strong>Obrigado pela sua confiança em mim.</strong></p>
+<p align="center"><strong>Obrigado pela sua confiança em mim e Deus te abençoe!</strong></p>
