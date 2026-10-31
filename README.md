@@ -13,7 +13,7 @@ desafio de raciocínio entre o impulso e a decisão.
 ## Recursos
 
 - **Bloqueio de sites adultos** no Brave, Chrome e Edge: domínios conhecidos, todos os seus
-  subdomínios, redirecionamentos para eles e conteúdo deles embutido em outros sites; endereços
+  subdomínios, redirecionamentos para eles e conteúdo deles embutido em outros sites (Ficarei feliz se contribuirem com outros navegadores); endereços
   cujo nome contém "porn" ou "hentai"; e domínios que você mesmo adicionar. Funciona offline.
 - **Página de bloqueio acolhedora**, com o motivo, um versículo (Bíblia Livre) e uma reflexão —
   nunca mensagens que humilham ou condenam.
