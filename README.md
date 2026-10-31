@@ -57,6 +57,21 @@ node tests/e2e/browser.e2e.mjs edge            # ponta a ponta num navegador rea
 powershell -ExecutionPolicy Bypass -File tools\build-installer.ps1   # gera artifacts\installer\*.exe
 ```
 
+### Gerar o instalador
+
+`tools\build-installer.ps1` procura o .NET SDK no `PATH` e o Inno Setup nas pastas padrão de
+instalação. Se algum deles estiver em outro lugar, informe o caminho na mesma janela do PowerShell
+antes de rodar o script (as variáveis valem só para aquela janela):
+
+```powershell
+$env:DOTNET_ROOT = 'C:\caminho\para\dotnet'               # pasta que contém dotnet.exe
+$env:ISCC = 'C:\caminho\para\Inno Setup 6\ISCC.exe'
+powershell -ExecutionPolicy Bypass -File tools\build-installer.ps1
+```
+
+O instalador fica em `artifacts\installer\NoWayYahweh-Setup-<versão>.exe`. Se aparecer
+"Nenhum .NET SDK encontrado", defina `DOTNET_ROOT`; se o Inno Setup não for encontrado, defina `ISCC`.
+
 Para usar sem instalador: rode `artifacts\bin\Debug\NoWayYahweh.exe` uma vez (ele registra o serviço
 nos navegadores) e carregue a pasta `extension/` no navegador.
 
@@ -109,3 +124,7 @@ Veja [CONTRIBUTING.md](CONTRIBUTING.md). Falhas de segurança: [SECURITY.md](SEC
 Código sob a [licença MIT](LICENSE). Os textos bíblicos são da **Bíblia Livre (BLIVRE)**,
 © 2018 Diego Santos, Mario Sérgio e Marco Teles, sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 Componentes de terceiros e suas licenças: [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+---
+
+<p align="center"><strong>Obrigado pela sua confiança em mim.</strong></p>
